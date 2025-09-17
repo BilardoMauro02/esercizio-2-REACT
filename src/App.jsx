@@ -9,9 +9,14 @@ function App() {
     email: '',
     password: ''
   });
+
+  const handleSubmit = (e) =>{
+        e.preventDefaut();
+        console.log(formData)
+  }
+
   
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = (name, value) => {
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -20,7 +25,8 @@ function App() {
 
 
   return (
-    <Form formData={formData} onChange={handleChange}/>
+    <Form formData={formData} handleChange={handleChange} handleSubmit={handleSubmit}/>
+
   )
 }
 

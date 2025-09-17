@@ -1,12 +1,12 @@
 
-function Input ( value, name, placeholder, type, onChange){
+function Input ( formData, name, placeholder, type, handleChange, data){
 
     return(
             <input className="input"
             name = {name}
-            value = {value}
+            value = {formData[data]}
             placeholder = {placeholder}
-            onChange={onChange}
+            onChange={(e) => handleChange(data, e.target.value)}
             type = {type}
             />
     )

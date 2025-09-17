@@ -1,6 +1,7 @@
+import Button from "../atoms/Button";
 import Input from "../atoms/Input";
 
-function Form({onChange, formData}) {
+function Form({handleChange, formData, handleSubmit}) {
 
     return(
         <form className="form">
@@ -12,7 +13,7 @@ function Form({onChange, formData}) {
                 type = "text"
                 placeholder = "inserisci un username.."
                 value = {formData.username}
-                onChange={onChange}
+                handleChange={handleChange}
             >
             </Input>
             </div>
@@ -24,7 +25,7 @@ function Form({onChange, formData}) {
                 type = "email"
                 placeholder = "inserisci un email.."
                 value = {formData.email}
-                onChange={onChange}
+                handleChange={handleChange}
                 >
 
             </Input>
@@ -37,9 +38,11 @@ function Form({onChange, formData}) {
                 type = "password"
                 placeholder = "inserisci una password.."
                 value = {formData.password}
-                onChange={onChange}>
+                handleChange={handleChange}>
             </Input>
             </div>
+
+            <Button onClick={handleSubmit} >invia</Button>
         </form>
     )
 }
